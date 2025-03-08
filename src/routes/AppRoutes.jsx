@@ -1,5 +1,5 @@
 // AppRoutes.jsx
-import { Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "../scenes/dashboard/index";
 import Team from "../scenes/team/index";
 import Contacts from "../scenes/contacts/index";
@@ -17,7 +17,7 @@ const AppRoutes = () => {
   const routes = useMemo(
     () => [
       {
-        path: "/dashboard",
+        path: "/",
         element: <Dashboard />, // Default route
       },
       {
@@ -65,11 +65,13 @@ const AppRoutes = () => {
   );
 
   return (
-    <Routes>
-      {routes.map((route, index) => (
-        <Route key={index} path={route.path} element={route.element} />
-      ))}
-    </Routes>
+    <Router>
+      <Routes>
+        {routes.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+    </Router>
   );
 };
 
