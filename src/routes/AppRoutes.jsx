@@ -1,5 +1,4 @@
-// AppRoutes.jsx
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Dashboard from "../scenes/dashboard/index";
 import Team from "../scenes/team/index";
 import Contacts from "../scenes/contacts/index";
@@ -10,68 +9,21 @@ import Line from "../scenes/line/index";
 import FAQ from "../scenes/faq/index";
 import Calendar from "../scenes/calendar/calendar";
 import Geography from "../scenes/geography/index";
-import { useMemo } from "react";
-// import NotFoundPage from "../components/NotFoundPage";
 
 const AppRoutes = () => {
-  const routes = useMemo(
-    () => [
-      {
-        path: "/",
-        element: <Dashboard />, // Default route
-      },
-      {
-        path: "/team",
-        element: <Team />,
-      },
-      {
-        path: "/contacts",
-        element: <Contacts />,
-      },
-      {
-        path: "/form",
-        element: <Form />,
-      },
-      {
-        path: "/bar",
-        element: <Bar />,
-      },
-      {
-        path: "/pie",
-        element: <Pie />,
-      },
-      {
-        path: "/line",
-        element: <Line />,
-      },
-      {
-        path: "/faq",
-        element: <FAQ />,
-      },
-      {
-        path: "/calendar",
-        element: <Calendar />,
-      },
-      {
-        path: "/geography",
-        element: <Geography />,
-      },
-      // {
-      //   path: "*", // 404 route
-      //   element: <NotFoundPage />,
-      // },
-    ],
-    []
-  );
-
   return (
-    <Router>
-      <Routes>
-        {routes.map((route, index) => (
-          <Route key={index} path={route.path} element={route.element} />
-        ))}
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/team" element={<Team />} />
+      <Route path="/contacts" element={<Contacts />} />
+      <Route path="/form" element={<Form />} />
+      <Route path="/bar" element={<Bar />} />
+      <Route path="/pie" element={<Pie />} />
+      <Route path="/line" element={<Line />} />
+      <Route path="/faq" element={<FAQ />} />
+      <Route path="/calendar" element={<Calendar />} />
+      <Route path="/geography" element={<Geography />} />
+    </Routes>
   );
 };
 
