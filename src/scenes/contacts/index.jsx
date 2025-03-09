@@ -4,7 +4,7 @@ import { tokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 
 const Contacts = () => {
   const theme = useTheme();
@@ -54,19 +54,14 @@ const Contacts = () => {
     },
   ];
 
-  const filteredRows = useMemo(() => {
-    if (!searchText) {
-      return mockDataContacts;
-    }
-
+  const filteredRows = mockDataContacts.filter((row) => {
+    if (!searchText) return true;
     const lowerCaseSearchText = searchText.toLowerCase();
-    return mockDataContacts.filter((row) =>
-      Object.values(row).some(
-        (value) =>
-          value && value.toString().toLowerCase().includes(lowerCaseSearchText)
-      )
+    return Object.values(row).some(
+      (value) =>
+        value && value.toString().toLowerCase().includes(lowerCaseSearchText)
     );
-  }, [searchText, mockDataContacts]);
+  });
 
   return (
     <Box m="20px">

@@ -117,7 +117,8 @@ const Calendar = () => {
               },
               {
                 id: "5123",
-                title: "Deploy the project on Vercel or Netlify and add it to your portfolio and CV",
+                title:
+                  "Deploy the project on Vercel or Netlify and add it to your portfolio and CV",
                 date: "2025-03-16",
               },
             ]}
