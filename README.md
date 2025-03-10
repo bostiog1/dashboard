@@ -38,9 +38,10 @@ Follow these steps to run the application locally.
 1. **Clone the repository**:
 
    open terminal
-git clone https://github.com/bostiog1/dashboard.git
+   
+   git clone https://github.com/bostiog1/dashboard.git
 
-cd dashboard
+   cd dashboard
 
 3. **Install dependencies:**
 
